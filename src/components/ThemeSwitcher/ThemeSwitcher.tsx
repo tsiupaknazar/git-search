@@ -11,12 +11,15 @@ export const ThemeSwitcher = () => {
   const ThemeIcon = isDark ? SunIcon : MoonIcon;
 
   useEffect(() => {
-    document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
     localStorage.setItem("dark", JSON.stringify(isDark));
+    document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
+
   }, [isDark]);
 
   function getTheme() {
-    const savedmode = JSON.parse(localStorage.getItem("dark") || "");
+    if(localStorage["dark"]){
+      var savedmode = JSON.parse(localStorage.getItem("dark") || "");
+    } 
     return savedmode || false;
   }
 
