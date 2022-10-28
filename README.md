@@ -1,1 +1,1 @@
-# TypeScript курс. Проект GitHub user finder
+# GitSearch App - Search Github Users made with React, Typescript
