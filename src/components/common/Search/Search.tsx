@@ -1,5 +1,5 @@
 import { ReactComponent as SearchIcon } from 'assets/icon-search.svg';
-import { Button } from 'components/Button';
+import { Button } from 'components/common/Button';
 
 import styles from './Search.module.scss';
 

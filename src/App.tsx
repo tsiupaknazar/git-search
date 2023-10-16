@@ -1,13 +1,14 @@
 import { useState } from 'react';
 
-import { Container } from 'components/Container';
-import { Search } from 'components/Search';
-import { TheHeader } from 'components/TheHeader';
-import { UserCard } from 'components/UserCard';
+import { Container } from 'components/common/Container';
+import { Search } from 'components/common/Search';
+import { TheHeader } from 'components/common/TheHeader';
+import { UserCard } from 'components/User/UserCard';
 import { defaultUser } from 'mock';
 import { GithubError, GithubUser, LocalGithubUser } from 'types';
 import { extractLocalUser } from 'utils/exract-local-user';
 import { isGithubUser } from 'utils/typeguards';
+import { ReposList } from 'components/Repos/ReposList';
 
 const BASE_URL = 'https://api.github.com/users/';
 
@@ -30,11 +31,14 @@ function App() {
   return (
     <Container>
       <TheHeader />
-      <Search hasError={!user} onSubmit={fetchUser}/>
+      <Search hasError={!user} onSubmit={fetchUser} />
       {user && (
-        <UserCard
-          {...user}
-        />
+        <>
+          <UserCard
+            {...user}
+          />
+          <ReposList />
+        </>
       )}
     </Container>
   );
