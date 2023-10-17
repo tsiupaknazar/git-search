@@ -1,19 +1,18 @@
 :global {
   body[data-theme="light"] {
     --block-bg: var(--gray-50);
-    --lang-color: var(--gray-300);
+    --text-color: var(--gray-300);
   }
 
   body[data-theme="dark"] {
     --block-bg: var(--gray-500);
-    --lang-color: var(--white);
+    --text-color: var(--white);
   }
 }
 
 .repoItem {
   margin: 10px;
   padding: 10px;
-//   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: var(--block-bg);
 }
@@ -28,8 +27,12 @@
   margin: 5px 0;
 }
 
+.description {
+    color: var(--text-color)
+}
+
 .language {
-  color: var(--lang-color);
+  color: var(--text-color);
 }
 
 .stars {

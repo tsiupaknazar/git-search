@@ -14,8 +14,11 @@ const RepoItem: React.FC<{ repository: GithubRepository }> = ({ repository }) =>
       <a href={repository.html_url} target="_blank" rel="noopener noreferrer">
         {repository.full_name}
       </a>
+      <p className={styles.description}>
+        {repository.description || "No description"}
+      </p>
       <p className={styles.language}>
-        {IconComponent ? <IconComponent /> : 'Not specified'}
+        Language: {IconComponent ? <IconComponent /> : 'Not specified'}
       </p>
       <div className={styles.flexBlock}>
         <p className={styles.stars}><BsFillStarFill /> {repository.stargazers_count}</p>
@@ -25,7 +28,7 @@ const RepoItem: React.FC<{ repository: GithubRepository }> = ({ repository }) =>
         <p className={styles.createdAt}>Created at: {formatDate(repository.created_at)}</p>
         <p className={styles.updatedAt}>Updated at: {formatDate(repository.updated_at)}</p>
       </div>
-      <a href={repository.homepage} target='_blank'>Live Link</a>
+      <a href={repository.homepage} target='_blank' style={{textAlign: 'center'}}>Live Link</a>
     </div>
   );
 };
