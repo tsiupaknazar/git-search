@@ -14,6 +14,9 @@ const ReposList: React.FC<ReposListProps> = ({ repositories }) => {
         {repositories.map((repo) => (
           <RepoItem repository={repo} />
         ))}
+        {repositories.length === 0 && (
+          <h2 className={styles.header}>Input some username and repos will show here</h2>
+        )}
       </ul>
     </div>
   );

@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
-import { Container } from 'components/common/Container';
-import { Search } from 'components/common/Search';
-import { TheHeader } from 'components/common/TheHeader';
-import { UserCard } from 'components/User/UserCard';
-import { defaultUser } from 'mock';
-import { GithubError, GithubRepository, GithubUser, LocalGithubUser } from 'types';
-import { extractLocalUser } from 'utils/exract-local-user';
-import { isGithubUser } from 'utils/typeguards';
-import ReposList from 'components/Repos/ReposList/ReposList';
+import { Container } from './components/common/Container';
+import { Search } from './components/common/Search';
+import { TheHeader } from './components/common/TheHeader';
+import { UserCard } from './components/User/UserCard';
+import { defaultUser } from './mock';
+import { GithubError, GithubRepository, GithubUser, LocalGithubUser } from './types';
+import { extractLocalUser } from './utils/exract-local-user';
+import { isGithubUser } from './utils/typeguards';
+import ReposList from './components/Repos/ReposList/ReposList';
 
 const BASE_URL = 'https://api.github.com/users/';
 const REPOS_URL = '/repos';
@@ -66,12 +66,14 @@ function App() {
               <button
                 onClick={() => setCurrentPage(currentPage - 1)}
                 disabled={currentPage === 1}
+                className='previous'
               >
                 Previous
               </button>
               <button
                 onClick={() => setCurrentPage(currentPage + 1)}
                 disabled={indexOfLastRepo >= repositories.length}
+                className='next'
               >
                 Next
               </button>

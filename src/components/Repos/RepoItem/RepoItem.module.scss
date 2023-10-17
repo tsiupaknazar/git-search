@@ -1,11 +1,21 @@
-/* RepoItem.module.scss */
+:global {
+  body[data-theme="light"] {
+    --block-bg: var(--gray-50);
+    --lang-color: var(--gray-300);
+  }
+
+  body[data-theme="dark"] {
+    --block-bg: var(--gray-500);
+    --lang-color: var(--white);
+  }
+}
 
 .repoItem {
   margin: 10px;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f0f0f0;
+//   border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: var(--block-bg);
 }
 
 .repoItem a {
@@ -18,12 +28,8 @@
   margin: 5px 0;
 }
 
-.description {
-  color: #444;
-}
-
 .language {
-  color: #777;
+  color: var(--lang-color);
 }
 
 .stars {
@@ -42,4 +48,13 @@ forks {
 .updatedAt {
   font-size: 14px;
   color: #777;
+}
+.flexBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  @media (max-width: 560px) {
+    justify-content: space-between;
+  }
 }
