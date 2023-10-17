@@ -1,39 +1,36 @@
-import { ReactComponent as CompanyIcon } from 'assets/icon-company.svg';
-import { ReactComponent as LocationIcon } from 'assets/icon-location.svg';
-import { ReactComponent as TwitterIcon} from 'assets/icon-twitter.svg';
-import { ReactComponent as BlogIcon} from 'assets/icon-website.svg';
+import { BiLinkAlt, BiCurrentLocation, BiLogoTwitter, BiSolidBuildings } from "react-icons/bi"
 
 import { InfoItem, InfoItemProps } from 'components/User/InfoItem';
 import { LocalGithubUser } from 'types';
 import styles from './UserInfo.module.scss';
 
 interface UserInfoProps extends Pick<
-LocalGithubUser,
+  LocalGithubUser,
   'blog' | 'company' | 'location' | 'twitter'
-> {}
+> { }
 
 
-export const UserInfo = ({ blog, company, location, twitter}: UserInfoProps) => {
+export const UserInfo = ({ blog, company, location, twitter }: UserInfoProps) => {
   const items: InfoItemProps[] = [
     {
-      icon: <LocationIcon />,
+      icon: <BiCurrentLocation color='4B6A9B' size={50} />,
       text: location,
     },
     {
-      icon: <BlogIcon />,
+      icon: <BiLinkAlt color='4B6A9B' size={50} />,
       text: blog,
       isLink: true,
     },
     {
-      icon: <TwitterIcon />,
+      icon: <BiLogoTwitter color='4B6A9B' size={50} />,
       text: twitter,
     },
     {
-      icon: <CompanyIcon />,
+      icon: <BiSolidBuildings color='4B6A9B' size={50} />,
       text: company,
     },
   ]
-  
+
   return (
     <div className={styles.userInfo}>
       {items.map((item, index) => (

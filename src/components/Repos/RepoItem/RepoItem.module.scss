@@ -1,1 +1,45 @@
-.repoItem {}
+/* RepoItem.module.scss */
+
+.repoItem {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+}
+
+.repoItem a {
+  font-weight: bold;
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.repoItem p {
+  margin: 5px 0;
+}
+
+.description {
+  color: #444;
+}
+
+.language {
+  color: #777;
+}
+
+.stars {
+  color: #f0a54a;
+}
+
+.watchers {
+  color: #6cc644;
+}
+
+forks {
+  color: #586069;
+}
+
+.createdAt,
+.updatedAt {
+  font-size: 14px;
+  color: #777;
+}
